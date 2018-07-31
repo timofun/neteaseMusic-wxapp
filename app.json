@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/welcome/welcome",
+    "pages/discover/discover",
+    "pages/mine/mine",
+    "pages/video/video",
+    "pages/accounts/accounts"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#C14F49",
+    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "selectedColor": "#B53B34",
+    "backgroundColor": "#1E1D1F",
+    "color": "#696665",
+    "list": [
+      {
+        "pagePath": "pages/discover/discover",
+        "selectedIconPath": "/images/tab/discover_active.png",
+        "iconPath": "/images/tab/discover.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "selectedIconPath": "/images/tab/mine_active.png",
+        "iconPath": "/images/tab/mine.png",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "selectedIconPath": "/images/tab/video_active.png",
+        "iconPath": "/images/tab/video.png",
+        "text": "视频"
+      },
+      {
+        "pagePath": "pages/accounts/accounts",
+        "selectedIconPath": "/images/tab/accounts_active.png",
+        "iconPath": "/images/tab/accounts.png",
+        "text": "帐号"
+      }
+    ]
+  }
+}

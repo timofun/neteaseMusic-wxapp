@@ -1,0 +1,86 @@
+<!--pages/discover/discover.wxml-->
+<view>
+  <view class='discover-container' wx:if="{{!searchPanel}}">
+    <view class="header">
+      <view class='box' bind:tap="onActivateSearch">
+        <image src="/images/icon/search.png" />
+        <text>搜索你最爱的歌曲吧~</text>
+      </view>
+      <view class='player-box'>
+        <image src="/images/icon/player.png"></image>
+      </view> 
+    </view>
+    <view class='content'>
+      <view class='tab-content'>
+        <view class="item {{_tab === '1' ? 'active' : ''}}" data-tab="1" bind:tap="tabClick">
+          <text>个性推荐</text>
+          <red-underline-cmp active="{{_tab === '1' ? true : false}}"></red-underline-cmp>
+        </view>
+        <view class="item {{_tab === '2' ? 'active' : ''}}" data-tab="2" bind:tap="tabClick">
+          <text>主播电台</text>
+          <red-underline-cmp active="{{_tab === '2' ? true : false}}"></red-underline-cmp>
+        </view>
+      </view>
+      <swiper
+        catchtap="onSwiperTap" 
+        indicator-dots='true'
+        indicator-color='rgba(255, 255, 255, .3)'
+        indicator-active-color='#b3d4db' 
+        interval='2000'
+        circular='true' 
+        autoplay>
+        <swiper-item wx:for="{{bannerList}}" wx:for-item="item" wx:key="{{item.targetId}}">
+          <image src='{{item.picUrl}}' data-songId="{{item.targetId}}"></image>
+        </swiper-item>
+      </swiper>
+      <view class="tab-type-content">
+        <view class='item'>
+          <view class='circle'>
+            <image src='/images/type/private.png'></image>
+          </view>
+          <text>私人FM</text>
+        </view>
+        <view class='item'>
+          <view class='circle'>
+            <image src='/images/type/date.png'></image>
+          </view>
+          <text>每日推荐</text>
+        </view>
+        <view class='item'>
+          <view class='circle'>
+            <image src='/images/type/songlist.png'></image>
+          </view>
+          <text>歌单</text>
+        </view>
+        <view class='item'>
+          <view class='circle'>
+            <image src='/images/type/rank.png'></image>
+          </view>
+          <text>排行榜</text>
+        </view>
+      </view>
+      <view style="position: relative">
+        <underline-onepx-cmp></underline-onepx-cmp>
+      </view>
+      <view class='recommend-songlist-content'>
+        <view class='title'>
+          <text>推荐歌单 ></text>
+        </view>
+        <view class='list'>
+          <view class='item' wx:for="{{recommendSonglist}}" wx:for-item="item" wx:key="{{item.id}}">
+            <view class='pic'>
+              <image class="bg" src="{{item.picUrl}}"></image>
+              <view class='desc'>
+                <image class="hp" src='/images/icon/headphone.png'></image>
+                <text>{{item.playCount}}</text>
+              </view>
+            </view>
+            <text class="name">{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <search-cmp more="{{more}}" wx:if="{{searchPanel}}" bind:cancel="onCancel" />
+</view>
+

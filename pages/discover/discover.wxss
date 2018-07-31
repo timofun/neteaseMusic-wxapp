@@ -1,0 +1,179 @@
+/* pages/discover/discover.wxss */
+page {
+  background-color: #1E1D1F;
+}
+
+.header{
+  height:100rpx;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+  display:flex; 
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  border-radius: 50rpx;
+  background-color: #2B2B2D;
+  height: 55rpx;
+  width:555rpx;
+  color:#999999;
+}
+
+.box image{
+  margin-right:10px;
+  width:28rpx;
+  height:28rpx;
+  margin-bottom:-2rpx;
+}
+
+.box text {
+  font-size: 24rpx;
+}
+
+.header .player-box {
+  position: absolute;
+  top: 27rpx;
+  right: 30rpx;
+} 
+
+.header .player-box image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.discover-container .content {
+  margin-top: 10rpx;
+}
+
+.discover-container .content .tab-content{
+  display: flex;
+  margin: 22rpx 0
+}
+
+.discover-container .content .tab-content .item{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #767676;
+}
+
+.discover-container .content .tab-content .active{
+  color: #B53C35;
+}
+
+swiper {
+  margin: auto;
+  width: 730rpx;
+  height: 336rpx;
+}
+
+swiper image{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.discover-container .content .tab-type-content {
+  display: flex;
+  margin: 30rpx 0;
+}
+
+.discover-container .content .tab-type-content .item{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.discover-container .content .tab-type-content .item .circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #444446;
+}
+
+.discover-container .content .tab-type-content .item .circle image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.discover-container .content .tab-type-content .item text{
+  font-size: 20rpx;
+  font-weight: bold;
+  color: #767676;
+}
+
+.discover-container .content .recommend-songlist-content {
+  padding: 36rpx 4rpx;
+  color: #767676;
+}
+
+.discover-container .content .recommend-songlist-content .list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.discover-container .content .recommend-songlist-content .title{
+  margin-left: 7rpx; 
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.discover-container .content .recommend-songlist-content .list .item{
+  display: flex;
+  flex-direction: column;
+  width: 241rpx;
+  height: 304rpx;
+  margin: 18rpx 3rpx;
+  box-sizing: border-box;
+}
+
+.discover-container .content .recommend-songlist-content .list .item .name{
+  font-size: 22rpx;
+}
+
+.discover-container .content .recommend-songlist-content .list .item .pic{
+  position: relative;
+  width: 241rpx;
+  height: 241rpx;
+}
+
+.discover-container .content .recommend-songlist-content .list .item .pic .desc{
+  position: absolute;
+  line-height: 20rpx;
+  top: 8rpx;
+  right: 15rpx;
+}
+
+.discover-container .content .recommend-songlist-content .list .item .pic .desc .hp{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 3px;
+  vertical-align: bottom;
+}
+
+.discover-container .content .recommend-songlist-content .list .item .pic .desc text{
+  font-size: 20rpx;
+}
+
+.discover-container .content .recommend-songlist-content .list .item .pic .bg{
+  width: 241rpx;
+  height: 241rpx;
+  border-radius: 5rpx;
+}
+

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "search-cmp": "/components/search/search",
+    "red-underline-cmp": "/components/redUnderline/redUnderline",
+    "underline-onepx-cmp": "/components/underline1px/underline1px"
+  },
+  "navigationBarBackgroundColor": "#1E1D1F",
+  "navigationBarTitleText": "发现",
+  "navigationBarTextStyle": "#fff",
+  "backgroundColor": "#1E1D1F"
+}

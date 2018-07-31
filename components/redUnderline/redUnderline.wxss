@@ -1,0 +1,15 @@
+.red-underline .red{
+  margin-top: 10rpx;
+  width: 56rpx;
+  height: 5rpx;
+  border-radius: 15rpx;
+  background-color: #B53C35;
+}
+
+.red-underline .black{
+  margin-top: 10rpx;
+  width: 56rpx;
+  height: 5rpx;
+  border-radius: 15rpx;
+  background-color: #1E1D1F;
+}

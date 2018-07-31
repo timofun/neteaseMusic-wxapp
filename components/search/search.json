@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tag-cmp":"../tag/index",
+    "loading-cmp":"../loading/index"
+  }
+}

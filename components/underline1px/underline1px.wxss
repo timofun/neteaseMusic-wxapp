@@ -1,0 +1,11 @@
+.underline1px::before {
+  height: 1px;
+  content: '';
+  width: 100%;
+  border-top: 1px solid #28282B;
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  transform: scaleY(0.5);
+  -webkit-transform: scaleY(0.5);
+}
