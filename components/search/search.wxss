@@ -56,6 +56,14 @@
   font-size: 30rpx;
 }
 
+.chunk {
+  height: 15px;
+  width: 5px;
+  background-color: #5C5C5E;
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .history {
   width: 690rpx;
   margin: 40rpx 0 20rpx 0;
@@ -63,6 +71,7 @@
   font-size: 14px;
   margin-top:160rpx;
   flex-direction: column;
+  color: #5C5C5E;
 }
 
 .hot-search{
@@ -121,13 +130,7 @@
   color: #999;
 }
 
-.chunk {
-  height: 15px;
-  width: 5px;
-  background-color: #000;
-  display: inline-block;
-  margin-right: 10px;
-}
+
 
 .tags {
   /* padding-left:15px; */
@@ -145,10 +148,6 @@
   margin-bottom: 10px;
   /* padding-bottom: 10px; *//* margin-right:6px; */
 }
-
-
-
-
 
 .test {
   background-color: #000;

@@ -1,4 +1,6 @@
 // pages/discover/discover.js
+import Discover from '../../models/discover.js'
+let discover = new Discover()
 Page({
 
   /**
@@ -18,39 +20,17 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    wx.request({
-      url: 'http://192.168.1.102:3000/banner', 
-      data: {
-        x: '',
-        y: ''
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)
-        _this.setData({
-          bannerList: res.data.banners
-        })
-      }
+    discover.getBanner((data) => {
+      this.setData({
+        bannerList: data.banners
+      })
     })
-    wx.request({
-      url: 'http://192.168.1.102:3000/personalized?limit=6',
-      data: {
-        x: '',
-        y: ''
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)
-        // item.playCount > 9999 ? item.playCount / 10000 + '万' : item.playCount
-        _this.setData({
-          recommendSonglist: res.data.result
-        })
-      }
+    discover.getPersonalized((data) => {
+      this.setData({
+        recommendSonglist: data.result
+      })
     })
+  
   },
 
   onActivateSearch: function (event) {

@@ -1,4 +1,4 @@
-import {HTTP} from '../../utils/http.js'
+import {HTTP} from '../utils/http.js'
 class KeywordModel extends HTTP{
   key = 'q'
   max = 10
@@ -12,10 +12,11 @@ class KeywordModel extends HTTP{
   }
 
   getHot(success){
-    this.request({
-      url:'/book/hot_keyword',
-      success:success
-    })
+    let params = {
+      url: 'search/hot',
+      success: success
+    }
+    this.request(params)
   }
 
 
@@ -39,4 +40,4 @@ class KeywordModel extends HTTP{
   }
 }
 
-export { KeywordModel}
+export default KeywordModel;

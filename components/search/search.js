@@ -1,4 +1,6 @@
 // components/search/search-cmp.js
+import KeywordModel from '../../models/keyword.js';
+let keywordModel = new KeywordModel();
 
 Component({
   /**
@@ -17,6 +19,21 @@ Component({
     q:'',
     loading:false,
     loadingCenter:false
+  },
+
+  /**
+   * 组件生命周期函数，在组件实例进入页面节点树时执行
+   */
+  attached: function () {
+    // this.setData({
+    //   historyKeys: keyModel.getHistory()
+    // })
+    keywordModel.getHot((data) => {
+      console.log(data)
+      this.setData({
+        hotKeys: data.result.hots
+      })
+    })
   },
 
   /**
