@@ -1,54 +1,35 @@
-// pages/discover/discover.js
-import Discover from '../../models/discover.js'
-import { random } from '../../utils/util.js'
-let discover = new Discover()
+// pages/player/player.js
+import Music from '../../models/music.js'
+let music = new Music()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchPanel: false,
-    books: Object,
-    more: false,
-    _tab: '1',
-    bannerList: [],
-    recommendSonglist: []
+    song: Object,
+    url: String
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;
-    discover.getBanner((data) => {
+    let songid = options.songid;
+    console.log(songid)
+    music.getSrc(songid, (data) => {
       this.setData({
-        bannerList: data.banners
+        url: data.data[0].url
       })
+      console.log(data)
     })
-    discover.getPersonalized((data) => {
+
+    music.getSongDetail(songid, (data) => {
       this.setData({
-        recommendSonglist: data.result
+        song: data.songs[0]
       })
-    })
-  
-  },
-
-  onActivateSearch: function (event) {
-    this.setData({
-      searchPanel: true
-    })
-  },
-
-  onCancel: function (event) {
-    this.setData({
-      searchPanel: false
-    })
-  },
-
-  tabClick: function (e) {
-    this.setData({
-      _tab: e.currentTarget.dataset.tab
+      console.log(data)
     })
   },
 
@@ -91,10 +72,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('random(16)', random(16))
-    this.setData({
-      more: random(16)
-    })
+  
   },
 
   /**

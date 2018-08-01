@@ -1,7 +1,8 @@
 /* components/tag/tag.wxss */
 
 .container{
-  padding:17rpx 26rpx; 
+  padding:17rpx 26rpx;
+  border: 1px solid #5C5C5E; 
   background-color: #252428;
   color:#5C5C5E;
   border-radius: 40rpx; 

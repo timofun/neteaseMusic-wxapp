@@ -118,7 +118,7 @@ swiper image{
 }
 
 .discover-container .content .recommend-songlist-content {
-  padding: 36rpx 4rpx;
+  padding: 36rpx 3rpx;
   color: #767676;
 }
 
@@ -137,9 +137,9 @@ swiper image{
 .discover-container .content .recommend-songlist-content .list .item{
   display: flex;
   flex-direction: column;
-  width: 241rpx;
+  width: 240rpx;
   height: 304rpx;
-  margin: 18rpx 3rpx;
+  margin: 18rpx 4rpx;
   box-sizing: border-box;
 }
 

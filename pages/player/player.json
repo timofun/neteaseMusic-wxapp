@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "music-cmp": "/components/music/music"
+  },
+  "navigationBarBackgroundColor": "#1E1D1F",
+  "navigationBarTitleText": "歌曲播放",
+  "navigationBarTextStyle": "#fff",
+  "backgroundColor": "#1E1D1F"
+}

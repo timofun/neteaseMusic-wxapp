@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "underline-onepx-cmp": "/components/underline1px/underline1px"
+  }
+}

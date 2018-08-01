@@ -4,7 +4,8 @@
     "pages/discover/discover",
     "pages/mine/mine",
     "pages/video/video",
-    "pages/accounts/accounts"
+    "pages/accounts/accounts",
+    "pages/player/player"
   ],
   "window":{
     "backgroundTextStyle":"light",

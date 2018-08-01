@@ -3,7 +3,7 @@
   <view class="header">
     <view class="search-container">
       <image class="icon" src="images/search.png" />
-      <input placeholder-class='in-bar' placeholder='搜索你最爱的歌曲吧~' class='bar' bind:confirm="onConfirm" value="{{q}}" auto-focus="true" />
+      <input placeholder-class='in-bar' placeholder='搜索你最爱的歌曲吧~' class='bar' bind:confirm="onConfirm" value="{{keywords}}" auto-focus="true" />
       <image bind:tap="onDelete" class="cancel-img" src="images/cancel.png" />
     </view>
     <view class='cancel' bind:tap="onCancel">取消</view>
@@ -15,7 +15,7 @@
         <text>历史搜索</text>
       </view>
       <view class="tags">
-        <tag-cmp wx:for="{{historyKeys}}" text="{{item}}" wx:for-index="index" wx:key="index"/>
+        <tag-cmp bind:tapping="onConfirm" wx:for="{{historyKeys}}" text="{{item}}" wx:for-index="index" wx:key="index"/>
       </view>
     </view>
     <view class="history hot-search">
@@ -24,11 +24,16 @@
         <text>热门搜索</text>
       </view>
         <view class="tags">
-          <tag-cmp wx:for="{{hotKeys}}" text="{{item.first}}" wx:for-index="index" wx:key="index"/>
+          <tag-cmp bind:tapping="onConfirm" wx:for="{{hotKeys}}" text="{{item.first}}" wx:for-index="index" wx:key="index"/>
         </view>
     </view>
   </view>
+  <view class="songs-container" wx:if="{{finished}}">
+    <block wx:for="{{dataArray}}" wx:key="{{item.id}}">
+      <song-cmp song="{{item}}" class="song" />
+    </block>
+  </view>
   <loading-cmp class="loading" wx:if="{{loading}}" />
   <loading-cmp class="loading-center" wx:if="{{loadingCenter}}" />
-  <text wx:if="{{empty}}" class="empty-tip">没有搜索到书籍</text>
+  <text wx:if="{{empty}}" class="empty-tip">暂无搜索结果</text>
 </view>

@@ -16,6 +16,7 @@
   width: 750rpx;
   align-items: center;
   z-index:99;
+  background-color: #1E1D1F;
   /* padding-left:15px;  *//* padding-right:5px; */
 }
 
@@ -56,14 +57,6 @@
   font-size: 30rpx;
 }
 
-.chunk {
-  height: 15px;
-  width: 5px;
-  background-color: #5C5C5E;
-  display: inline-block;
-  margin-right: 10px;
-}
-
 .history {
   width: 690rpx;
   margin: 40rpx 0 20rpx 0;
@@ -84,6 +77,14 @@
   flex-direction: row;
   align-items: center;
   /* margin-left:100px; */
+}
+
+.chunk {
+  height: 15px;
+  width: 5px;
+  background-color: #5C5C5E;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .books-container book-cmp {
@@ -130,8 +131,6 @@
   color: #999;
 }
 
-
-
 .tags {
   /* padding-left:15px; */
   display: flex;
@@ -151,4 +150,9 @@
 
 .test {
   background-color: #000;
+}
+
+.songs-container {
+  margin-top: 100rpx;
+  width: 100%
 }

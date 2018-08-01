@@ -1,0 +1,10 @@
+<view class="music-container">
+  <view class='bg'>
+    <image src="{{img}}" />
+  </view>
+  <view class='player-container'>
+    <image src="{{img}}" class="player-img {{playing?'rotation':''}}" />
+    <image class="playing-img" bind:tap = "onPlay" src="{{playing?playingUrl:waittingUrl}}" />
+    <text class="name">{{name}}</text>
+  </view>
+</view>
