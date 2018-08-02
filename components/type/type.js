@@ -6,8 +6,7 @@ Component({
   properties: {
     img: String,
     name: String,
-    playlistid: Number,
-    count: Number
+    id: String
   },
 
   /**
@@ -23,7 +22,7 @@ Component({
   methods: {
     onTap: function (event) {
       this.triggerEvent('tapping', {
-        playlistid: this.properties.playlistid
+        id: this.properties.id
       })
     }
   }

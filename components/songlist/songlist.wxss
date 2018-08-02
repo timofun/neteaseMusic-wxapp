@@ -1,34 +1,48 @@
 .songlist-container {
   display: flex;
-  padding: 22rpx 16rpx;
-}
-
-.songlist-container .left {
-  display: flex;
-  flex: 1;
   flex-direction: column;
+  width: 240rpx;
+  height: 304rpx;
+  margin: 18rpx 4rpx;
+  box-sizing: border-box;
 }
 
-.songlist-container .left .name {
-  margin-bottom: 10rpx;
-  font-size: 24rpx;
-  font-weight: bold;
-  color: #587AA8;
+.songlist-container .name {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 22rpx;
 }
 
-.songlist-container .left .desc {
+.songlist-container .pic {
+  position: relative;
+  width: 241rpx;
+  height: 241rpx;
+}
+
+.songlist-container .pic .desc {
+  position: absolute;
+  line-height: 20rpx;
+  top: 8rpx;
+  right: 15rpx;
+}
+
+.songlist-container .pic .desc .hp {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 3px;
+  vertical-align: bottom;
+}
+
+.songlist-container .pic .desc text {
   font-size: 20rpx;
-  color: #626261;
 }
 
-.songlist-container .right {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width: 80rpx;
-}
-
-.songlist-container .right image{
-  width: 32rpx;
-  height: 32rpx;
+.songlist-container .pic .bg {
+  width: 241rpx;
+  height: 241rpx;
+  border-radius: 5rpx;
 }

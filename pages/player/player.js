@@ -1,6 +1,7 @@
 // pages/player/player.js
 import Music from '../../models/music.js'
 let music = new Music()
+const app = getApp()
 
 Page({
 
@@ -17,20 +18,37 @@ Page({
    */
   onLoad: function (options) {
     let songid = options.songid;
-    console.log(songid)
-    music.getSrc(songid, (data) => {
+    if (app.globalData.g_currentSongId && songid === app.globalData.g_currentSongId 
+        && app.globalData.g_songUrl && app.globalData.g_currentSong) {
       this.setData({
-        url: data.data[0].url
+        url: app.globalData.g_songUrl
       })
-      console.log(data)
-    })
+      this.setData({
+        song: app.globalData.g_currentSong
+      })
+      wx.setNavigationBarTitle({
+        title: app.globalData.g_currentSong.name
+      })
+    } else {
+      app.globalData.g_currentSongId = songid
+      music.getSrc(songid, (data) => {
+        this.setData({
+          url: data.data[0].url
+        })
+        app.globalData.g_songUrl = data.data[0].url
+      })
 
-    music.getSongDetail(songid, (data) => {
-      this.setData({
-        song: data.songs[0]
+      music.getSongDetail(songid, (data) => {
+        this.setData({
+          song: data.songs[0]
+        })
+        app.globalData.g_currentSong = data.songs[0]
+        wx.setNavigationBarTitle({
+          title: data.songs[0].name
+        })
       })
-      console.log(data)
-    })
+    }
+    
   },
 
   /**

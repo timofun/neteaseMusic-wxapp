@@ -5,7 +5,7 @@
   <view class='player-container' bind:touchstart="onTouchstart" bind:touchmove='onTouchmove'
     bind:touchend="onTouchend" 
    >
-    <text class="name">{{name}}</text>
+    <!-- <text class="name">{{name}}</text> -->
     <image src="{{img}}" class="player-img {{playing?'rotation':''}}" 
      />
     <image class="playing-img" catch:tap="onPlay" src="{{playing?playingUrl:waittingUrl}}" />

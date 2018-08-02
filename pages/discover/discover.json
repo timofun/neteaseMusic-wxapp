@@ -2,10 +2,10 @@
   "usingComponents": {
     "search-cmp": "/components/search/search",
     "red-underline-cmp": "/components/redUnderline/redUnderline",
-    "underline-onepx-cmp": "/components/underline1px/underline1px"
+    "underline-onepx-cmp": "/components/underline1px/underline1px",
+    "type-cmp": "/components/type/type",
+    "title-cmp": "/components/title/title",
+    "songlist-cmp": "/components/songlist/songlist"
   },
-  "navigationBarBackgroundColor": "#1E1D1F",
-  "navigationBarTitleText": "发现",
-  "navigationBarTextStyle": "#fff",
-  "backgroundColor": "#1E1D1F"
+  "navigationBarTitleText": "发现"
 }

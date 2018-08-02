@@ -5,13 +5,14 @@
     "pages/mine/mine",
     "pages/video/video",
     "pages/accounts/accounts",
-    "pages/player/player"
+    "pages/player/player",
+    "pages/playlist/playlist"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#C14F49",
+    "navigationBarBackgroundColor": "#1E1D1F",
     "navigationBarTitleText": "网易云音乐",
-    "navigationBarTextStyle":"black",
+    "navigationBarTextStyle":"light",
     "backgroundColor": "#fff"
   },
   "tabBar": {

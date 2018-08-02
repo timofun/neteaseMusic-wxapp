@@ -1,6 +1,7 @@
 // components/classic/music/music.js
 
 let mMgr = wx.getBackgroundAudioManager()
+const app = getApp();
 
 Component({
   /**
@@ -29,6 +30,9 @@ Component({
     this._recoverPlaying()
     this._monitorSwitch()
   },
+  ready: function () {
+    this.isPlaying()
+  },
 
   detached: function() {
     // wx.pauseBackgroundAudio()
@@ -44,18 +48,21 @@ Component({
           playing: true,
         })
         if(mMgr.src == this.properties.src){
-          mMgr.play()
+          mMgr.play();
         }
         else{
           mMgr.src = this.properties.src
         }
+        console.log(this.properties.src)
         mMgr.coverImgUrl = this.properties.img
         mMgr.title = this.properties.name
+        app.globalData.g_isPlayingMusic = true
       } else {
         this.setData({
           playing: false,
         })
         mMgr.pause()
+        app.globalData.g_isPlayingMusic = false
       }
     },
 
@@ -90,16 +97,14 @@ Component({
       })
     },
     onTouchstart: function (e) {
-      console.log(e)
+      // 获取触摸时的原点
       const pageX = e.touches[0].pageX;
       this.setData({
         touchDot: pageX
       })
-      console.log('touchDot', this.data.touchDot)
-       // 获取触摸时的原点
+       
     },
     onTouchmove: function (e) {
-      console.log(e)
       let touch = e.changedTouches[0];
       let touchMove = e.changedTouches[0].pageX;
       let deltaX = touch.pageX - this.data.touchDot
@@ -117,8 +122,25 @@ Component({
       mMgr.src = this.properties.src
       mMgr.coverImgUrl = this.properties.img
       mMgr.title = this.properties.name
+      app.globalData.g_isPlayingMusic = true
     },
     onTouchend: function (e) {
+    },
+    // 判断如果是播放状态，那么进入页面继续播放
+    isPlaying: function () {
+      if (app.globalData.g_isPlayingMusic) {
+        if (app.globalData.g_songUrl === this.properties.src) {
+          this.setData({
+            playing: true,
+          })
+        } else {
+          mMgr.pause()
+          this.setData({
+            playing: false,
+          })
+          app.globalData.g_isPlayingMusic = false
+        }
+      }
     }
   }
 })

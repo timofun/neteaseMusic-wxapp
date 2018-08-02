@@ -1,14 +1,10 @@
-<view bind:tap="onTap" class="songlist-cmp">
-  <view class="songlist-container">
-    <view class="left">
-      <text class="name">{{song.name}}</text>
-      <text class="desc">{{song.artists[0].name}} - {{song.album.name}}</text>
-    </view>
-    <view class="right">
-      <image src="./images/more.png"></image>
+<view class='songlist-container' bindtap='onTap'>
+  <view class='pic'>
+    <image class="bg" src="{{img}}"></image>
+    <view class='desc' wx:if="{{count > 0}}">
+      <image class="hp" src='/images/icon/headphone.png'></image>
+      <text>{{count}}</text>
     </view>
   </view>
-  <view style="position: relative">
-    <underline-onepx-cmp></underline-onepx-cmp>
-  </view>
+  <text class="name">{{name}}</text>
 </view>

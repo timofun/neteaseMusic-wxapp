@@ -34,6 +34,7 @@
 
 .player-img {
   position: absolute;
+  top:120rpx;
   left: 90rpx;
   width: 550rpx;
   height: 550rpx;

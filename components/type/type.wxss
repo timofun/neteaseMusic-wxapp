@@ -1,0 +1,28 @@
+.type-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-container .circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #444446;
+}
+
+.type-container .circle image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.type-container text{
+  font-size: 20rpx;
+  font-weight: bold;
+  color: #767676;
+}

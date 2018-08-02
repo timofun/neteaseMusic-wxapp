@@ -1,0 +1,84 @@
+/* pages/playlist/playlist.wxss */
+
+.playlist-container {
+  width: 100%;
+  height: 1336rpx;
+  background-color: #222225;
+}
+.playlist-container .head {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 450rpx;
+  z-index: 10;
+}
+
+.playlist-container .head .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.playlist-container .head .bg image {
+  width: 100%;
+  height: 100%;
+}
+
+.playlist-container .head .content-wapper {
+  position: relative;
+  padding: 40rpx 25rpx;
+}
+
+.playlist-container .head .content-wapper .avatar {
+  display: inline-block;
+}
+
+.playlist-container .head .content-wapper .avatar image {
+  width: 255rpx;
+  height: 255rpx;
+  border-radius: 10rpx;
+}
+
+.playlist-container .head .content-wapper .content {
+  display: inline-block;
+  vertical-align: top;
+  padding: 25rpx 0 25rpx 25rpx;
+}
+
+.playlist-container .head .content-wapper .content .name {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 410rpx;
+  margin-bottom: 45rpx;
+  font-size: 32rpx;
+  color: #c1c0c1;
+}
+
+.playlist-container .head .content-wapper .content .creator image {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+}
+
+.playlist-container .head .content-wapper .content .creator text {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 56rpx;
+  margin-left: 15rpx;
+  font-size: 24rpx;
+  color: #c1c0c1;
+}
+
+.loading-center {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}

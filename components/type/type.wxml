@@ -1,0 +1,6 @@
+<view class='type-container' bind:tap="onTap" data-typeid="{{id}}">
+  <view class='circle'>
+    <image src='{{img}}'></image>
+  </view>
+  <text>{{name}}</text>
+</view>

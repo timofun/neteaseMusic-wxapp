@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "loading-cmp": "../../components/loading/index",
+    "song-cmp": "../../components/song/song"
+  },
+  "navigationBarTitleText": "歌单"
+}

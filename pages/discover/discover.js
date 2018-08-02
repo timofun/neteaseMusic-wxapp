@@ -2,6 +2,7 @@
 import Discover from '../../models/discover.js'
 import { random } from '../../utils/util.js'
 let discover = new Discover()
+const app = getApp()
 Page({
 
   /**
@@ -9,17 +10,44 @@ Page({
    */
   data: {
     searchPanel: false,
-    books: Object,
     more: false,
     _tab: '1',
     bannerList: [],
-    recommendSonglist: []
+    recommendSonglist: [],
+    topPlaylist: [],
+    playing: false,
+    waittingUrl: '/images/icon/player.png',
+    playingUrl: '/images/icon/playing.gif',
+    recommendImg: [
+      {
+        id: '1',
+        img: '/images/type/private.png',
+        name: '私人FM'
+      },
+      {
+        id: '2',
+        img: '/images/type/date.png',
+        name: '每日推荐'
+      },
+      {
+        id: '3',
+        img: '/images/type/songlist.png',
+        name: '歌单'
+        },
+      {
+        id: 4,
+        img: '/images/type/rank.png',
+        name: '排行榜'
+      }
+    ],
+    radioImg: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     var _this = this;
     discover.getBanner((data) => {
       this.setData({
@@ -29,6 +57,12 @@ Page({
     discover.getPersonalized((data) => {
       this.setData({
         recommendSonglist: data.result
+      })
+    })
+
+    discover.getTopPlaylist((data) => {
+      this.setData({
+        topPlaylist: data.playlists
       })
     })
   
@@ -43,6 +77,33 @@ Page({
   onCancel: function (event) {
     this.setData({
       searchPanel: false
+    })
+  },
+
+  /**
+   * 点击音律按钮进入player页面
+   */
+  goPlayer: function () {
+    if (app.globalData.g_currentSongId) {
+      wx.navigateTo({
+        url: '../../pages/player/player?songid=' + app.globalData.g_currentSongId,
+      })
+    } else {
+      wx.showToast({
+        title: '未播放任何歌曲！',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    
+  },
+
+  /**
+   * 点击歌单获取详情
+   */
+  goPlaylist: function (e) {
+    wx.navigateTo({
+      url: '../../pages/playlist/playlist?playlistid=' + e.detail.playlistid,
     })
   },
 
@@ -63,7 +124,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.onBackgroundAudioPause(() => {
+      this.setData({
+        playing: false
+      })
+      app.globalData.g_isPlayingMusic = false;
+    });
+    wx.onBackgroundAudioStop(() => {
+      this.setData({
+        playing: false
+      })
+      app.globalData.g_isPlayingMusic = false;
+    });
+    if (app.globalData.g_isPlayingMusic) {
+      this.setData({
+        playing: true
+      })
+    }
   },
 
   /**

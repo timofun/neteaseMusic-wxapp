@@ -1,0 +1,30 @@
+<!--pages/playlist/playlist.wxml-->
+<view class='playlist-container'>
+  <view class='head' wx:if="{{playlist.id}}">
+    <view class='content-wapper'>
+      <view class='avatar'>
+        <image src='{{playlist.coverImgUrl}}'></image>
+      </view>
+      <view class='content'>
+        <text class='name'>{{playlist.name}}</text>
+        <view>
+          <view class='creator'>
+            <image src="{{playlist.creator.avatarUrl}}"></image>
+            <text class='creator-name'>{{playlist.creator.nickname}} > </text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='bg'>
+      <image src="{{playlist.coverImgUrl}}"></image>
+    </view>
+  </view>
+  <view>
+    <view class="songs-container">
+      <block wx:for="{{playlist.tracks}}" wx:key="{{item.id}}">
+        <song-cmp song="{{item}}" class="song" />
+      </block>
+    </view>
+  </view>
+  <loading-cmp class="loading-center" wx:if="{{loadingCenter}}" />
+</view>

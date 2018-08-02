@@ -3,6 +3,6 @@
   "usingComponents": {
     "tag-cmp":"../tag/index",
     "loading-cmp":"../loading/index",
-    "song-cmp": "../songlist/songlist"
+    "song-cmp": "../song/song"
   }
 }

@@ -1,0 +1,35 @@
+.songlist-container {
+  display: flex;
+  padding: 22rpx 16rpx;
+  background-color: #222225;
+}
+
+.songlist-container .left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.songlist-container .left .name {
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #587AA8;
+}
+
+.songlist-container .left .desc {
+  font-size: 20rpx;
+  color: #626261;
+}
+
+.songlist-container .right {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: 80rpx;
+}
+
+.songlist-container .right image{
+  width: 32rpx;
+  height: 32rpx;
+}

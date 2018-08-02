@@ -30,6 +30,11 @@ class HTTP {
         }
       },
       fail: function (err) {
+        wx.showToast({
+          title: '请求失败！',
+          icon: 'none',
+          duration: 2000
+        })
         params.fail && params.fail(err)
       }
     });
