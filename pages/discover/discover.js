@@ -15,6 +15,7 @@ Page({
     bannerList: [],
     recommendSonglist: [],
     topPlaylist: [],
+    playlistHighquality: [],
     playing: false,
     waittingUrl: '/images/icon/player.png',
     playingUrl: '/images/icon/playing.gif',
@@ -60,9 +61,9 @@ Page({
       })
     })
 
-    discover.getTopPlaylist((data) => {
+    discover.getPlaylistHighquality((data) => {
       this.setData({
-        topPlaylist: data.playlists
+        playlistHighquality: data.playlists
       })
     })
   
@@ -168,7 +169,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('random(16)', random(16))
     this.setData({
       more: random(16)
     })

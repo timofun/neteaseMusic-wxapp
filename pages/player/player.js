@@ -97,6 +97,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    console.log(this.data.song)
+    return {
+      title: this.data.song.name,
+      path: '/pages/player/player?songid=' + app.globalData.g_currentSongId
+    }
   }
 })

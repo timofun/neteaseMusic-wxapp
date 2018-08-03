@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "视频"
+  "navigationBarTitleText": "视频",
+  "usingComponents": {
+    "underline-onepx-cmp": "/components/underline1px/underline1px"
+  }
 }

@@ -1,1 +1,40 @@
 /* pages/accounts/accounts.wxss */
+page {
+  background-color: #1E1D1F;
+}
+
+.accounts-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1E1D1F;
+}
+
+.accounts-container .logo-content {
+  margin-top: 170rpx;
+  text-align: center; 
+}
+
+.accounts-container .logo-content image{
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.accounts-container .btn-content {
+  margin-top: 134rpx;
+  text-align: center;
+}
+
+.accounts-container .btn-content button{
+  width: 587rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #B53B34;
+  background-color: #1E1D1F;
+  border: 1px solid #B53B34;
+  border-radius: 38rpx;
+}

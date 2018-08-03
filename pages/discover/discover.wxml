@@ -64,14 +64,15 @@
       <view style="position: relative">
         <underline-onepx-cmp></underline-onepx-cmp>
       </view>
-      <!-- 网友精选碟 -->
+      <!-- 精品歌单 -->
       <view class='songlist-content'>
         <view class="title-cmp">
-          <title-cmp name="网友精选碟" />
+          <title-cmp name="精品歌单" />
         </view>
         <view class='list'>
-          <block wx:for="{{topPlaylist}}" wx:for-item="item" wx:key="{{item.id}}">
-            <songlist-cmp img="{{item.coverImgUrl}}" count="0" name="{{item.name}}" playlistid="{{item.id}}"/>
+          <block wx:for="{{playlistHighquality}}" wx:for-item="item" wx:key="{{item.id}}">
+            <songlist-cmp img="{{item.coverImgUrl}}" count="0" name="{{item.name}}"
+             playlistid="{{item.id}}" bind:tapping="goPlaylist"/>
           </block>
         </view>
       </view>

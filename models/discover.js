@@ -33,6 +33,21 @@ class Discover extends HTTP {
   }
 
   /**
+   * 获取精品歌单
+   * @param { 成功后的回调函数 } success 
+   */
+  getPlaylistHighquality(success) {
+    let params = {
+      url: 'top/playlist/highquality',
+      data: {
+        limit: 6
+      },
+      success: success
+    }
+    this.request(params)
+  }
+
+  /**
    * 获取网友精选碟
    * @param { 成功后的回调函数 } success 
    */

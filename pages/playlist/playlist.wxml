@@ -15,14 +15,29 @@
         </view>
       </view>
     </view>
+    <view class='btn-container'>
+      <view class='item'>
+        <image src='/images/icon/comment.png'></image>
+        <text>{{playlist.commentCount}}</text>
+      </view>
+      <view class='item'>
+        <button open-type='share' plain='{{true}}' class="btn-share">
+          <image src='/images/icon/share.png'></image>
+        </button>
+        <text>{{playlist.shareCount}}</text>
+      </view>
+    </view>
     <view class='bg'>
       <image src="{{playlist.coverImgUrl}}"></image>
     </view>
   </view>
   <view>
     <view class="songs-container">
-      <block wx:for="{{playlist.tracks}}" wx:key="{{item.id}}">
-        <song-cmp song="{{item}}" class="song" />
+      <block wx:for="{{playlist.tracks}}" wx:key="{{item.id}}" wx:for-index="index">
+        <view class="item">
+          <text class="index">{{index + 1}}</text>
+          <song-cmp song="{{item}}" class="song" />
+        </view>
       </block>
     </view>
   </view>

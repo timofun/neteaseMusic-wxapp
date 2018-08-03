@@ -14,7 +14,7 @@
   margin-bottom: 10rpx;
   font-size: 24rpx;
   font-weight: bold;
-  color: #587AA8;
+  color: #929293;
 }
 
 .songlist-container .left .desc {

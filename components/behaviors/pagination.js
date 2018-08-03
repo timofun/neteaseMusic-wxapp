@@ -16,7 +16,6 @@ let paginationBev = Behavior({
 
   methods: {
     setMoreData: function(dataArray) {
-      console.log('dataArray', dataArray)
       if (!dataArray && !dataArray.length) {
         this.data.ending = true
         if(!this.data.dataArray){
@@ -27,7 +26,6 @@ let paginationBev = Behavior({
       }
       let temp =this.data.dataArray.concat(dataArray)
       this.data.offset++
-      console.log('this.data.offset', this.data.offset)
       this.setData({
         dataArray: temp
       })

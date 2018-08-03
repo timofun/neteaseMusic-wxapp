@@ -1,1 +1,4 @@
 /* pages/mine/mine.wxss */
+page {
+  background-color: #1E1D1F;
+}

@@ -2,7 +2,8 @@
   <view class="songlist-container">
     <view class="left">
       <text class="name">{{song.name}}</text>
-      <text class="desc">{{song.artists[0].name}} - {{song.album.name}}</text>
+      <text class="desc" wx:if="{{song.album}}">{{song.artists[0].name}} - {{song.album.name}}</text>
+      <text class="desc" wx:if="{{song.al}}">{{song.ar[0].name}} - {{song.al.name}}</text>
     </view>
     <view class="right">
       <image src="./images/more.png"></image>

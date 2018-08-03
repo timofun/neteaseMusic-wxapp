@@ -1,18 +1,26 @@
 // pages/video/video.js
+import Video from '../../models/video.js'
+const video = new Video();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    videolist: [],
+    currentVideo: {},
+    videoSrc: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    video.getVideoTop(10, data => {
+      this.setData({
+        videolist: data.data
+      })
+    })
   },
 
   /**
@@ -20,6 +28,17 @@ Page({
    */
   onReady: function () {
   
+  },
+
+  getVideoDetail: function (e) {
+    console.log(e)
+    let id = e.currentTarget.dataset.id
+    video.getVideoDetail(id, data => {
+      this.setData({
+        videoSrc: data.data.brs[240]
+      })
+      console.log(data)
+    })
   },
 
   /**

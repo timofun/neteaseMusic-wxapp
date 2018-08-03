@@ -73,6 +73,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      title: this.data.playlist.name,
+      imageUrl: this.data.playlist.coverImgUrl,
+      path: '/pages/playlist/playlist?playlistid=' + this.data.playlist.id
+    }
   }
 })

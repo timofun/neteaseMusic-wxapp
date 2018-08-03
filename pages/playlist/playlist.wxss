@@ -77,6 +77,56 @@
   color: #c1c0c1;
 }
 
+.playlist-container .head .btn-container {
+  display: flex;
+}
+
+.playlist-container .head .btn-container .item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-share {
+  line-height:1;
+  padding: 0 !important;
+  border:none !important;
+}
+
+.playlist-container .head .btn-container .item image{
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.playlist-container .head .btn-container .item text{
+  font-size: 20rpx;
+  color: #ffffff;
+}
+
+.songs-container {
+}
+
+.songs-container .item {
+  display: flex;
+  background-color: #222225;
+}
+
+.songs-container .item .index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70rpx;
+  font-size: 26rpx;
+  color: #414144;
+
+}
+
+.songs-container .item .song {
+  flex: 1;
+}
+
 .loading-center {
   position: absolute;
   top: 30%;

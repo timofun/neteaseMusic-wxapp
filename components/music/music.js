@@ -111,14 +111,7 @@ Component({
       if (deltaX > 0) {
         return
       }
-      console.log(deltaX)
       mMgr.stop()
-      this.setData({
-        playing: false,
-      })
-      this.setData({
-        playing: true,
-      })
       mMgr.src = this.properties.src
       mMgr.coverImgUrl = this.properties.img
       mMgr.title = this.properties.name

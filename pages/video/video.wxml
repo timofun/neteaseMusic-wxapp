@@ -1,2 +1,30 @@
 <!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class='video-container'>
+  <view class='item'>
+    <video src="http://192.168.1.102:3000/mv/url?url=http://v4.music.126.net/20180803172424/40cb240261a1d6a43ca102c9f61e331c/web/cloudmusic/e5ee/mv/7f67/ea4d119b3ef12e03a8440f0cec82ecae.mp4" controls ></video>
+    <text>视频测试</text>
+    <!-- 1px分割线 -->
+    <view style="position: relative">
+      <underline-onepx-cmp></underline-onepx-cmp>
+    </view>
+  </view>
+  <view class='item'>
+    <video src="http://192.168.1.102:3000/mv/url?url=http://v4.music.126.net/20180803174436/e94a175f784685b98e7a8200115b1f79/web/cloudmusic/2428/mv/f9fc/930e8886608bedac4b728fe5610f95db.mp4" controls ></video>
+    <text>视频测试</text>
+    <!-- 1px分割线 -->
+    <view style="position: relative">
+      <underline-onepx-cmp></underline-onepx-cmp>
+    </view>
+  </view>
+  <view wx:for="{{videolist}}" wx:for-item="item" wx:key="{{item.id}}" class='item'>
+    <image src='{{item.cover}}' catchtap='getVideoDetail' data-id="{{item.id}}"></image>
+    <!-- <video src="{{videoSrc}}" controls wx:if="{{videoSrc !== ''}}"></video> -->
+    <text wx:if="{{item.briefDesc}}">{{item.briefDesc}}</text>
+    <text wx:if="{{!item.briefDesc}}">{{item.name}}</text>
+    <!-- 1px分割线 -->
+    <view style="position: relative">
+      <underline-onepx-cmp></underline-onepx-cmp>
+    </view>
+  </view>
+  
+</view>

@@ -1,2 +1,12 @@
 <!--pages/accounts/accounts.wxml-->
-<text>pages/accounts/accounts.wxml</text>
+<view class='accounts-container'>
+  <view class='logo-content'>
+    <image src='/images/icon/logo.png'></image>
+  </view>
+  <view class='btn-content'>
+    <button>手机号登录</button>
+  </view>
+  <!-- <view>
+    <button>邮箱登录</button>
+  </view> -->
+</view>
