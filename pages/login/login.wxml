@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class="login-container">
+  <form report-submit="true" bindsubmit="onLoginSubmitTap">
+    <view class="input-area">
+      <view class='image'>
+        <image src='../../images/accounts/phone.png'></image>
+      </view>
+      <input maxlength="11" bindblur="checkPhoneNumber" type="number" placeholder-style="color:#2D2C30" placeholder="填写手机号" name="phone" />
+    </view>
+    <view class="input-area">
+      <view class='image'>
+        <image src='../../images/accounts/pwd.png'></image>
+      </view>
+      <input type="password" placeholder-style="color:#2D2C30" placeholder="输入密码" name="pwd"/>
+    </view>
+    <button disabled="{{disabled}}" id="loginBtn" type="primary" formType="submit">登录</button>
+  </form>
+</view>

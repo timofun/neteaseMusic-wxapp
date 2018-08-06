@@ -1,2 +1,89 @@
 <!--pages/mine/mine.wxml-->
-<text>我的</text>
+<view class='mine-container'>
+  <view class='head'>
+    <view class='item'>
+      <view class='img'>
+        <image src='../../images/me/local_music.png'></image>
+      </view>
+      <view class='text'>
+        <text>本地音乐</text>
+        <view class='right'>
+          <text>0</text>
+          <image src='../../images/me/arrow_right.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='img'>
+        <image src='../../images/me/play.png'></image>
+      </view>
+      <view class='text'>
+        <text>最近播放</text>
+        <view class='right'>
+          <text>163</text>
+          <image src='../../images/me/arrow_right.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='img'>
+        <image src='../../images/me/radio.png'></image>
+      </view>
+      <view class='text'>
+        <text>我的电台</text>
+        <view class='right'>
+          <text>4</text>
+          <image src='../../images/me/arrow_right.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='img'>
+        <image src='../../images/me/collection.png'></image>
+      </view>
+      <view class='text'>
+        <text>我的收藏</text>
+        <view class='right'>
+          <text>19</text>
+          <image src='../../images/me/arrow_right.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='content-container'>
+    <view class='item'>
+      <view class="title">
+        <text>我创建的歌单</text>
+      </view>
+    </view>
+    <view class='list' wx:if="{{myPlaylist}}">
+      <view wx:for="{{myPlaylist}}" wx:for-item="item" wx:key="{{item.id}}"
+       class="list-item" catchtap='goPlayDetail' data-id="{{item.id}}">
+        <view class='img'>
+          <image src='{{item.coverImgUrl}}'></image>
+        </view>
+        <view class='right'>
+          <text class='name'>{{item.name}}</text>
+          <text class='count'>{{item.trackCount}}首</text>
+        </view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class="title">
+        <text>我收藏的歌单</text>
+      </view>
+    </view>
+    <view class='list' wx:if="{{orderPlaylist}}">
+      <view wx:for="{{orderPlaylist}}" wx:for-item="item" wx:key="{{item.id}}"
+       class="list-item" catchtap='goPlayDetail' data-id="{{item.id}}">
+        <view class='img'>
+          <image src='{{item.coverImgUrl}}'></image>
+        </view>
+        <view class='right'>
+          <text class='name'>{{item.name}}</text>
+          <text class='count'>{{item.trackCount}}首</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

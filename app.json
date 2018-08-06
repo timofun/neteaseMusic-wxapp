@@ -6,7 +6,8 @@
     "pages/video/video",
     "pages/accounts/accounts",
     "pages/player/player",
-    "pages/playlist/playlist"
+    "pages/playlist/playlist",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",

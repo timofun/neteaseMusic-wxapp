@@ -10,7 +10,10 @@ Component({
   behaviors: [],
 
   properties: {
-    src: String,
+    src: {
+      type: String,
+      value: '',
+    },
     name: String,
     img: String
   },
@@ -43,6 +46,14 @@ Component({
    */
   methods: {
     onPlay: function(event) {
+      if (this.properties.src === 'error') {
+        wx.showToast({
+          title: '无法播放此歌曲',
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
       if (!this.data.playing) {
         this.setData({
           playing: true,
@@ -53,7 +64,6 @@ Component({
         else{
           mMgr.src = this.properties.src
         }
-        console.log(this.properties.src)
         mMgr.coverImgUrl = this.properties.img
         mMgr.title = this.properties.name
         app.globalData.g_isPlayingMusic = true

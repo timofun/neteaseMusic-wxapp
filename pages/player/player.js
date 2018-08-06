@@ -10,7 +10,10 @@ Page({
    */
   data: {
     song: Object,
-    url: String
+    url: {
+      type: String,
+      value: ''
+    }
   },
 
   /**
@@ -32,6 +35,13 @@ Page({
     } else {
       app.globalData.g_currentSongId = songid
       music.getSrc(songid, (data) => {
+        console.log(data)
+        if (data.code !== 200) {
+          this.setData({
+            url: 'error'
+          })
+          return
+        }
         this.setData({
           url: data.data[0].url
         })
@@ -40,7 +50,8 @@ Page({
 
       music.getSongDetail(songid, (data) => {
         this.setData({
-          song: data.songs[0]
+          song: data.songs[0],
+          // url: `http://music.163.com/song/media/outer/url?id=${data.songs[0].id}.mp3'`
         })
         app.globalData.g_currentSong = data.songs[0]
         wx.setNavigationBarTitle({

@@ -3,6 +3,10 @@ page {
   background-color: #1E1D1F;
 }
 
+.discover-container {
+  background-color: #1E1D1F;
+}
+
 .header{
   position: fixed;
   top: 0;

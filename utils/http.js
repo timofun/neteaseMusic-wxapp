@@ -26,7 +26,7 @@ class HTTP {
         if (res.data.code === 200) {
           params.success && params.success(res.data);
         } else {
-          params.error && params.error(res);
+          params.success && params.success(res.data);
         }
       },
       fail: function (err) {

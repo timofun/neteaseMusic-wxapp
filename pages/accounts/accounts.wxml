@@ -1,12 +1,27 @@
 <!--pages/accounts/accounts.wxml-->
 <view class='accounts-container'>
-  <view class='logo-content'>
-    <image src='/images/icon/logo.png'></image>
+  <view wx:if="{{!isLogin}}">
+    <view class='logo-content'>
+      <image src='/images/icon/logo.png'></image>
+    </view>
+    <view class='btn-content'>
+      <button catchtap='login'>手机号登录</button>
+    </view>
   </view>
-  <view class='btn-content'>
-    <button>手机号登录</button>
+  <view wx:if="{{isLogin}}">
+    <view class='logout' bindtap='logout'>
+      <image src='../../images/accounts/logout.png'></image>
+    </view>
+    <view class='content-container'>
+      <view class='avatar'>
+        <image src='{{user.avatar}}'></image>
+      </view>
+      <view class='nickname'>
+        <text>{{user.nickname}}</text>
+      </view>
+      <view class='signature'>
+        <text>{{user.signature}}</text>
+      </view>
+    </view>
   </view>
-  <!-- <view>
-    <button>邮箱登录</button>
-  </view> -->
 </view>

@@ -1,11 +1,14 @@
 // pages/accounts/accounts.js
+import Login from '../../models/login.js'
+const login = new Login();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    isLogin: false,
+    user: {}
   },
 
   /**
@@ -13,6 +16,28 @@ Page({
    */
   onLoad: function (options) {
   
+  },
+
+  login: function () {
+    wx.navigateTo({
+      url: '../login/login',
+    })
+  },
+
+  logout: function () {
+    wx.showModal({
+      title: '提示',
+      content: '确认注销此账号吗？',
+      success: (res) => {
+        if (res.confirm) {
+          login.logout()
+          this.setData({
+            isLogin: false,
+            user: {}
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -26,7 +51,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    let userinfo = login.getUserinfo()
+    if (userinfo) {
+      this.setData({
+        isLogin: true,
+        user: JSON.parse(userinfo)
+      })
+    } else {
+      let uid = login.getUid()
+      if (uid) {
+        login.getUserDetail(uid, data => {
+          let u = {
+            nickname: data.profile.nickname,
+            signature: data.profile.signature,
+            avatar: data.profile.avatarUrl,
+            bgUrl: data.profile.backgroundUrl
+          }
+          login.addUserinfo(u)
+          this.setData({
+            user: u,
+            isLogin: true
+          })
+        })
+      }
+    }
   },
 
   /**
