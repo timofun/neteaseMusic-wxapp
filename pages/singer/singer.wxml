@@ -1,0 +1,10 @@
+<!--pages/singer/singer.wxml-->
+<view class='singer-container'>
+  <view class='list' wx:for="{{singerlist}}" wx:for-item="item"
+   wx:key="{{item.id}}" data-singerid="{{item.id}}" catchtap='goSingerDetail'>
+    <view class='img'>
+      <image src='{{item.picUrl}}'></image>    
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>

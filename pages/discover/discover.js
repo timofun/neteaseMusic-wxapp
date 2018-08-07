@@ -36,7 +36,7 @@ Page({
         name: '歌单'
         },
       {
-        id: 4,
+        id: '4',
         img: '/images/type/rank.png',
         name: '排行榜'
       }
@@ -99,10 +99,39 @@ Page({
     
   },
 
+  onType: function (e) {
+    console.log(e)
+    switch (e.detail.idx) {
+      case '1':
+        wx.navigateTo({
+          url: '../../pages/personalFm/personalFm'
+        })
+        break;
+      case '2':
+        wx.navigateTo({
+          url: '../../pages/recommend/recommend'
+        })
+        break;
+      case '3':
+        wx.navigateTo({
+          url: '../../pages/allPlaylist/allPlaylist'
+        })
+        break;
+      case '4':
+        wx.navigateTo({
+          url: '../../pages/top/top'
+        })
+        break;
+      default:
+        break;    
+    }
+  },
+
   /**
    * 点击歌单获取详情
    */
   goPlaylist: function (e) {
+    console.log(e)
     wx.navigateTo({
       url: '../../pages/playlist/playlist?playlistid=' + e.detail.playlistid,
     })

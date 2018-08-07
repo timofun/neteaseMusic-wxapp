@@ -40,7 +40,7 @@
       <!-- 分类 -->
       <view class="tab-type-content">
         <block wx:for="{{recommendImg}}" wx:for-item="item" wx:key="{{item.id}}">
-          <type-cmp img="{{item.img}}" name="{{item.name}}" id="{{item.id}}" class="type-cmp"/>
+          <type-cmp img="{{item.img}}" name="{{item.name}}" typeid="{{item.id}}" class="type-cmp" bindtapping="onType"/>
         </block>
       </view>
       <!-- 1px分割线 -->

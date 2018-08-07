@@ -1,0 +1,33 @@
+/* pages/singer/singer.wxss */
+
+page {
+  background-color: #1e1d1f;
+}
+
+.singer-container {
+  background-color: #1e1d1f;
+}
+
+.singer-container .list {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.singer-container .list .img{
+  flex: 0 0 200rpx;
+  height: 104rpx;
+  text-align: center;
+}
+
+.singer-container .list .img image{
+  width: 128rpx;
+  height: 104rpx;
+  border-radius: 15rpx;
+}
+
+.singer-container .list text {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #696665;
+}

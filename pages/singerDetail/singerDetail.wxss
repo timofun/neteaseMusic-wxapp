@@ -1,0 +1,43 @@
+/* pages/singerDetail/singerDetail.wxss */
+
+page {
+  background-color: #1e1d1f;
+}
+
+.singer-detail-container {
+  background-color: #1e1d1f;
+}
+
+.singer-detail-container .bg-img {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 70%;
+  transform-origin: top;
+  background-size: cover;
+}
+
+.songs-container .item {
+  display: flex;
+  background-color: #222225;
+}
+
+.songs-container .item .index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70rpx;
+  font-size: 26rpx;
+  color: #414144;
+
+}
+
+.songs-container .item .song {
+  flex: 1;
+}
+
+.loading-center {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}

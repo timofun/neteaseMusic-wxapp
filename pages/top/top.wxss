@@ -1,0 +1,55 @@
+/* pages/top/top.wxss */
+
+page {
+  background-color: #1e1d1f;
+}
+
+.top-container {
+  background-color: #1e1d1f;
+}
+
+.top-container .content-container {
+  padding: 36rpx 3rpx;
+  color: #767676;
+}
+
+.top-container .content-container .title-cmp{
+  margin-left: 7rpx; 
+}
+
+.top-container .content-container .list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.top-container .content-container .list .item {
+  display: flex;
+  flex-direction: column;
+  width: 240rpx;
+  height: 304rpx;
+  margin: 18rpx 4rpx;
+  box-sizing: border-box;
+}
+
+.top-container .content-container .list .item .name {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 22rpx;
+}
+
+.top-container .content-container .list .item .pic {
+  position: relative;
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.top-container .content-container .list .item .pic .bg {
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 5rpx;
+}

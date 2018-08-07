@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "排行榜",
+  "usingComponents": {
+    "underline-onepx-cmp": "/components/underline1px/underline1px",
+    "title-cmp": "/components/title/title"
+  }
+}

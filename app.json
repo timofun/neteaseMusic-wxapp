@@ -2,6 +2,12 @@
   "pages":[
     "pages/welcome/welcome",
     "pages/discover/discover",
+    "pages/top/top",
+    "pages/allPlaylist/allPlaylist",
+    "pages/personalFm/personalFm",
+    "pages/recommend/recommend",
+    "pages/singer/singer",
+    "pages/singerDetail/singerDetail",
     "pages/mine/mine",
     "pages/video/video",
     "pages/accounts/accounts",
@@ -35,10 +41,10 @@
         "text": "我的"
       },
       {
-        "pagePath": "pages/video/video",
-        "selectedIconPath": "/images/tab/video_active.png",
-        "iconPath": "/images/tab/video.png",
-        "text": "视频"
+        "pagePath": "pages/singer/singer",
+        "selectedIconPath": "/images/tab/singer_active.png",
+        "iconPath": "/images/tab/singer.png",
+        "text": "歌手"
       },
       {
         "pagePath": "pages/accounts/accounts",

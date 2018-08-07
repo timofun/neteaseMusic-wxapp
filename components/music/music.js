@@ -26,7 +26,8 @@ Component({
     waittingUrl: 'images/player@waitting.png',
     playingUrl: 'images/player@playing.png',
     touchDot: 0,
-    position: Number
+    position: Number,
+    playingBg: '/images/play/playing-bg.png'
   },
 
   attached: function() {

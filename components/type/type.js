@@ -6,7 +6,7 @@ Component({
   properties: {
     img: String,
     name: String,
-    id: String
+    typeid: String
   },
 
   /**
@@ -22,7 +22,7 @@ Component({
   methods: {
     onTap: function (event) {
       this.triggerEvent('tapping', {
-        id: this.properties.id
+        idx: this.properties.typeid
       })
     }
   }

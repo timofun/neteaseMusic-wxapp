@@ -10,7 +10,7 @@
         <view>
           <view class='creator'>
             <image src="{{playlist.creator.avatarUrl}}"></image>
-            <text class='creator-name'>{{playlist.creator.nickname}} > </text>
+            <text class='creator-name'>{{playlist.creator.nickname}}</text>
           </view>
         </view>
       </view>

@@ -1,0 +1,37 @@
+<!--pages/top/top.wxml-->
+<view class='top-container'>
+  <!-- 云音乐特色榜 -->
+  <view class="content-container">
+    <view class="title-cmp">
+      <title-cmp name="云音乐特色榜" />
+    </view>
+    <view class='list'>
+      <view class='item' wx:for="{{top.yun}}" wx:for-item="item" catchtap='onTap'
+       wx:key="{{item.idx}}" data-idx="{{item.idx}}">
+        <view class='pic'>
+          <image class="bg" src="{{item.img}}"></image>
+        </view>
+        <text class="name">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 1px分割线 -->
+  <view style="position: relative">
+    <underline-onepx-cmp></underline-onepx-cmp>
+  </view>
+  <!-- 全球榜 -->
+  <view class="content-container">
+    <view class="title-cmp">
+      <title-cmp name="全球榜" />
+    </view>
+    <view class='list'>
+      <view class='item' catchtap='onTap' wx:for="{{top.world}}" wx:for-item="item"
+       wx:key="{{item.idx}}" data-idx="{{item.idx}}">
+        <view class='pic'>
+          <image class="bg" src="{{item.img}}"></image>
+        </view>
+        <text class="name">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>

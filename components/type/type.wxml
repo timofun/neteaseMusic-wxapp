@@ -1,4 +1,4 @@
-<view class='type-container' bind:tap="onTap" data-typeid="{{id}}">
+<view class='type-container' bind:tap="onTap" data-typeid="{{typeid}}">
   <view class='circle'>
     <image src='{{img}}'></image>
   </view>

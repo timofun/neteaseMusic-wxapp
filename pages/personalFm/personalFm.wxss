@@ -1,0 +1,18 @@
+/* pages/personalFm/personalFm.wxss */
+.personal_fm-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  background-color: #1E1D1F;
+  color: #767676;
+}
+
+.personal_fm-container text {
+  width: 500rpx;
+}

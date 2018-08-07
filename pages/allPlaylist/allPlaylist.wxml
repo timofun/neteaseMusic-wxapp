@@ -1,0 +1,4 @@
+<!--pages/allPlaylist/allPlaylist.wxml-->
+<view class='all_playlist-container'>
+  <text>没找到此接口</text>
+</view>

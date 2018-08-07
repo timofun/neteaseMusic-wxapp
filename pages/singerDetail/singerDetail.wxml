@@ -1,0 +1,16 @@
+<!--pages/singerDetail/singerDetail.wxml-->
+<view class='singer-detail-container'>
+  <view class="bg-img" style='background-image: url({{singer.picUrl}});'>
+  </view>
+  <view>
+    <view class="songs-container">
+      <block wx:for="{{songlist}}" wx:key="{{item.id}}" wx:for-index="index">
+        <view class="item">
+          <text class="index">{{index + 1}}</text>
+          <song-cmp song="{{item}}" class="song" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <loading-cmp class="loading-center" wx:if="{{loadingCenter}}" />
+</view>

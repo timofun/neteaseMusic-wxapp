@@ -1,0 +1,4 @@
+<!--pages/recommend/recommend.wxml-->
+<view class='recommend-container'>
+  <text>此页面和歌单详情页差不多，由于网易此接口需要登录cookie，所以暂时不开发</text>
+</view>

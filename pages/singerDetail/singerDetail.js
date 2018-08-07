@@ -1,16 +1,15 @@
-// pages/playlist/playlist.js
-import Playlist from '../../models/playlist.js'
-import Discover from '../../models/discover.js'
-const discover = new Discover();
-let playlist = new Playlist();
+// pages/singerDetail/singerDetail.js
+import Singer from '../../models/singer.js'
+const singer = new Singer();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    playlist: {},
-    loading: false,
+    singer: {},
+    songlist: [],
+    album: [],
     loadingCenter: false
   },
 
@@ -21,22 +20,17 @@ Page({
     this.setData({
       loadingCenter: true
     })
-    if (this.options.playlistid) {
-      playlist.getPlaylist(this.options.playlistid, (data) => {
-        this.setData({
-          playlist: data.playlist,
-          loadingCenter: false
-        })
+    singer.getArtists(this.options.singerid, data => {
+      console.log(data)
+      wx.setNavigationBarTitle({
+        title: data.artist.name
       })
-    } else if (this.options.idx) {
-      discover.getToplist(this.options.idx, data => {
-        this.setData({
-          playlist: data.playlist,
-          loadingCenter: false
-        })
+      this.setData({
+        singer: data.artist,
+        songlist: data.hotSongs,
+        loadingCenter: false
       })
-    }
-    
+    })
   },
 
   /**
@@ -85,10 +79,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      title: this.data.playlist.name,
-      imageUrl: this.data.playlist.coverImgUrl,
-      path: '/pages/playlist/playlist?playlistid=' + this.data.playlist.id
-    }
+  
   }
 })
