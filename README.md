@@ -2,9 +2,6 @@
 ## 说明
 > 此项目为了练手小程序而写的，接口是github一个开源项目提供的，接口很齐全，开发了大部分的页面，还有一些细节可以优化，未来会慢慢更新。
 
-## 技术栈
->react, react-router4, redux, redux-thunk, betterScroll, webpack4
-
 ##项目运行
 >先把接口clone下来，node启动就好
 
