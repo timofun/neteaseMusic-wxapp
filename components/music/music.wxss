@@ -52,7 +52,7 @@
 
 .playing-img {
   position: absolute;
-  top: 345rpx;
+  top: 335rpx;
   left: 315rpx;
   width: 120rpx;
   height: 120rpx;
